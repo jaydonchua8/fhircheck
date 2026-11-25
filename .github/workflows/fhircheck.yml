@@ -1,0 +1,33 @@
+name: fhircheck
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * *"   # daily regression run against the public servers
+
+jobs:
+  suite:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests and live suite (Linux, Bash)
+        if: runner.os == 'Linux'
+        run: bash run.sh --perf-n 20
+      - name: Unit tests and live suite (Windows, PowerShell)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./run.ps1 -PerfN 20
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fhircheck-${{ matrix.os }}
+          path: results/

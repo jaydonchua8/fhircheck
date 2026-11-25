@@ -1,0 +1,13 @@
+# Same suite on GitLab CI (Linux runner). Not exercised by this repo's own CI; GitHub Actions is the one that runs.
+stages: [test]
+fhircheck:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - bash run.sh --perf-n 20
+  artifacts:
+    when: always
+    paths: [results/]
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_PIPELINE_SOURCE == "push"

@@ -321,3 +321,6 @@ def p_latency(cl, ctx, n=20, budget_ms=2000.0, pause=None):
 CONFORMANCE = [c_metadata, c_content_type, c_patient_declared, c_read_missing, c_search_bundle]
 WRITE = [w_create, w_read_back, w_update_version, w_vread, w_search_identifier, w_conditional_update, w_delete]
 SECURITY = [s_tls, s_headers, s_malformed_json, s_bad_param, s_injection_param]
+
+WRITE_IDS = ["W01-create", "W02-read-back", "W03-update-version", "W04-vread",
+             "W05-search-identifier", "W06-stale-etag", "W07-delete"]

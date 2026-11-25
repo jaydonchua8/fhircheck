@@ -36,6 +36,20 @@ Each run writes `results/report-<platform>.json` and a Markdown report. With `--
 
 `.github/workflows/fhircheck.yml` runs the unit tests and the live suite on `ubuntu-latest` (Bash) and `windows-latest` (PowerShell) on every push and once a day, publishes the Markdown report to the job summary and uploads the JSON as an artifact. `.gitlab-ci.yml` and `Jenkinsfile` run the same scripts on those systems; they are included but this repository only exercises GitHub Actions.
 
+## Results from the first CI run
+
+GitHub Actions run #1 (Nov 25, 2026), both runners, all three servers. Every conformance and write-path check passed on all three servers. What it did flag:
+
+| Server | Finding |
+|---|---|
+| Firely R4 | A read of a missing Patient returns 404 with no OperationOutcome body, which the spec says should explain the error |
+| Firely R4 | `birthdate=not-a-date` is accepted with 200 instead of a 400 (handled safely, but silently) |
+| HAPI R4, Firely R4 | No HSTS or `X-Content-Type-Options` header on API responses |
+| HAPI R4 | p95 latency of 4,410 ms on the Linux runner against 303 ms on Windows in the same run, from a few slow responses; DNS lookups for the host took about 3.9 s on both runners |
+| All | No 5xx responses and no stack traces in error bodies for malformed JSON, invalid dates or quote characters |
+
+`baseline.json` records the statuses from that run, so later runs fail if any of those passing checks starts failing.
+
 ## Tests
 
 `test_fhircheck.py` runs every check against `mockfhir.py`, an in-memory FHIR server with 13 injectable bugs (wrong content type, missing Location, no version bump, accepting a stale ETag, delete that does nothing, 500 on malformed input, stack trace in an error body, and others). Each test asserts the bug is caught by the check aimed at it and does not make unrelated checks fail.

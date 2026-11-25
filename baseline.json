@@ -1,0 +1,237 @@
+{
+ "started": "2026-11-25T02:38:15+00:00",
+ "source": "GitHub Actions run #1, ubuntu-latest job",
+ "servers": [
+  {
+   "server": "hapi-r4",
+   "results": [
+    {
+     "id": "C01-metadata",
+     "status": "pass"
+    },
+    {
+     "id": "C02-content-type",
+     "status": "pass"
+    },
+    {
+     "id": "C03-patient-declared",
+     "status": "pass"
+    },
+    {
+     "id": "C04-read-missing",
+     "status": "pass"
+    },
+    {
+     "id": "C05-search-bundle",
+     "status": "pass"
+    },
+    {
+     "id": "W01-create",
+     "status": "pass"
+    },
+    {
+     "id": "W02-read-back",
+     "status": "pass"
+    },
+    {
+     "id": "W03-update-version",
+     "status": "pass"
+    },
+    {
+     "id": "W04-vread",
+     "status": "pass"
+    },
+    {
+     "id": "W05-search-identifier",
+     "status": "pass"
+    },
+    {
+     "id": "W06-stale-etag",
+     "status": "pass"
+    },
+    {
+     "id": "W07-delete",
+     "status": "pass"
+    },
+    {
+     "id": "S01-tls",
+     "status": "pass"
+    },
+    {
+     "id": "S02-headers",
+     "status": "warn"
+    },
+    {
+     "id": "S03-malformed-json",
+     "status": "pass"
+    },
+    {
+     "id": "S04-bad-param",
+     "status": "pass"
+    },
+    {
+     "id": "S05-injection-string",
+     "status": "pass"
+    },
+    {
+     "id": "P01-latency",
+     "status": "warn"
+    }
+   ]
+  },
+  {
+   "server": "firely-r4",
+   "results": [
+    {
+     "id": "C01-metadata",
+     "status": "pass"
+    },
+    {
+     "id": "C02-content-type",
+     "status": "pass"
+    },
+    {
+     "id": "C03-patient-declared",
+     "status": "pass"
+    },
+    {
+     "id": "C04-read-missing",
+     "status": "warn"
+    },
+    {
+     "id": "C05-search-bundle",
+     "status": "pass"
+    },
+    {
+     "id": "W01-create",
+     "status": "pass"
+    },
+    {
+     "id": "W02-read-back",
+     "status": "pass"
+    },
+    {
+     "id": "W03-update-version",
+     "status": "pass"
+    },
+    {
+     "id": "W04-vread",
+     "status": "pass"
+    },
+    {
+     "id": "W05-search-identifier",
+     "status": "pass"
+    },
+    {
+     "id": "W06-stale-etag",
+     "status": "pass"
+    },
+    {
+     "id": "W07-delete",
+     "status": "pass"
+    },
+    {
+     "id": "S01-tls",
+     "status": "pass"
+    },
+    {
+     "id": "S02-headers",
+     "status": "warn"
+    },
+    {
+     "id": "S03-malformed-json",
+     "status": "pass"
+    },
+    {
+     "id": "S04-bad-param",
+     "status": "pass"
+    },
+    {
+     "id": "S05-injection-string",
+     "status": "pass"
+    },
+    {
+     "id": "P01-latency",
+     "status": "pass"
+    }
+   ]
+  },
+  {
+   "server": "smart-r4",
+   "results": [
+    {
+     "id": "C01-metadata",
+     "status": "pass"
+    },
+    {
+     "id": "C02-content-type",
+     "status": "pass"
+    },
+    {
+     "id": "C03-patient-declared",
+     "status": "pass"
+    },
+    {
+     "id": "C04-read-missing",
+     "status": "pass"
+    },
+    {
+     "id": "C05-search-bundle",
+     "status": "pass"
+    },
+    {
+     "id": "W01-create",
+     "status": "skip"
+    },
+    {
+     "id": "W02-read-back",
+     "status": "skip"
+    },
+    {
+     "id": "W03-update-version",
+     "status": "skip"
+    },
+    {
+     "id": "W04-vread",
+     "status": "skip"
+    },
+    {
+     "id": "W05-search-identifier",
+     "status": "skip"
+    },
+    {
+     "id": "W06-stale-etag",
+     "status": "skip"
+    },
+    {
+     "id": "W07-delete",
+     "status": "skip"
+    },
+    {
+     "id": "S01-tls",
+     "status": "pass"
+    },
+    {
+     "id": "S02-headers",
+     "status": "pass"
+    },
+    {
+     "id": "S03-malformed-json",
+     "status": "skip"
+    },
+    {
+     "id": "S04-bad-param",
+     "status": "pass"
+    },
+    {
+     "id": "S05-injection-string",
+     "status": "pass"
+    },
+    {
+     "id": "P01-latency",
+     "status": "pass"
+    }
+   ]
+  }
+ ]
+}

@@ -33,7 +33,7 @@ def run_server(srv, perf_n=20, timeout=20.0, write=True, **opts):
         if ctx.get("pid") and not ctx.get("deleted"):
             cl.delete(f"Patient/{ctx['pid']}")  # best-effort cleanup if a write check failed midway
     else:
-        results += [checks.Result(f.__name__, "write", "skip", "read-only server") for f in checks.WRITE]
+        results += [checks.Result(cid, "write", "skip", "read-only server") for cid in checks.WRITE_IDS]
     results += [f(cl, ctx) for f in checks.SECURITY]
     if perf_n > 0:
         results.append(checks.p_latency(cl, ctx, n=perf_n))

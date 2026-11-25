@@ -1,0 +1,5 @@
+[
+ {"name": "hapi-r4", "base": "https://hapi.fhir.org/baseR4", "write": true},
+ {"name": "firely-r4", "base": "https://server.fire.ly/R4", "write": true},
+ {"name": "smart-r4", "base": "https://r4.smarthealthit.org", "write": false}
+]
